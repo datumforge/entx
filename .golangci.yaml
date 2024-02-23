@@ -1,0 +1,56 @@
+linters-settings:
+  goimports:
+    local-prefixes: github.com/datumforge/entx
+  gofumpt:
+    extra-rules: true
+  gosec:
+    exclude-generated: true
+  revive:
+    ignore-generated-header: true
+
+run:
+  skip-files:
+    - internal/entclean/main.go
+    - internal/testutils
+    - .buildkite/*
+    - .github/*
+    - docker/*
+    - schema/*
+
+linters:
+  enable:
+    # default linters
+    - errcheck
+    - gosimple
+    - govet
+    - ineffassign
+    - staticcheck
+    - typecheck
+    - unused
+    - gosec
+    - bodyclose
+    - noctx
+    - gocritic
+    - gocyclo
+    - goerr113
+    - gofmt
+    - goimports
+    - gomnd
+    - govet
+    - misspell
+    - revive
+    - stylecheck
+    - whitespace
+    - wsl
+issues:
+  exclude:
+    - Error return value of .((os\.)?std(out|err)\..*|.*Close|.*Flush|os\.Remove(All)?|.*print(f|ln)?|os\.(Un)?Setenv). is not checked
+    - func name will be used as test\.Test.* by other packages, and that stutters; consider calling this
+    - (possible misuse of unsafe.Pointer|should have signature)
+    - ineffective break statement. Did you mean to break out of the outer loop
+    - Use of unsafe calls should be audited
+    - Subprocess launch(ed with variable|ing should be audited)
+    - (G104|G307)
+    - (Expect directory permissions to be 0750 or less|Expect file permissions to be 0600 or less)
+    - Potential file inclusion via variable
+  exclude-use-default: false
