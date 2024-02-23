@@ -11,7 +11,6 @@ import (
 	"github.com/uptrace/opentelemetry-go-extra/otelsql"
 	"go.opentelemetry.io/otel/attribute"
 
-	"github.com/pkg/errors"
 	"go.uber.org/zap"
 )
 
@@ -143,7 +142,7 @@ func (c *EntClientConfig) NewEntDB(dataSource string) (*entsql.Driver, error) {
 func Healthcheck(client *entsql.Driver) func(ctx context.Context) error {
 	return func(ctx context.Context) error {
 		if err := client.DB().Ping(); err != nil {
-			return errors.Wrap(err, "db connection failed")
+			return fmt.Errorf("db connection failed: %w", err)
 		}
 
 		return nil
