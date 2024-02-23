@@ -12,7 +12,7 @@ require (
 	github.com/uptrace/opentelemetry-go-extra/otelsql v0.2.3
 	github.com/vektah/gqlparser/v2 v2.5.11
 	go.opentelemetry.io/otel v1.24.0
-	go.uber.org/zap v1.24.0
+	go.uber.org/zap v1.27.0
 )
 
 require (
@@ -43,7 +43,7 @@ require (
 	go.opentelemetry.io/otel/metric v1.24.0 // indirect
 	go.opentelemetry.io/otel/trace v1.24.0 // indirect
 	go.uber.org/atomic v1.10.0 // indirect
-	go.uber.org/multierr v1.9.0 // indirect
+	go.uber.org/multierr v1.10.0 // indirect
 	golang.org/x/exp v0.0.0-20240213143201-ec583247a57a // indirect
 	golang.org/x/mod v0.15.0 // indirect
 	golang.org/x/text v0.14.0 // indirect
