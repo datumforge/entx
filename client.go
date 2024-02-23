@@ -92,9 +92,13 @@ func WithLogger(l *zap.SugaredLogger) DBOption {
 	}
 }
 
-// WithSecondaryDB sets the secondary db connection
+// WithSecondaryDB sets the secondary db connection if the driver supports multiwrite
 func WithSecondaryDB() DBOption {
 	return func(c *EntClientConfig) {
+		if !CheckMultiwriteSupport(c.config.DriverName) {
+			c.logger.Fatalw("unsupported multiwrite driver", "driver", c.config.DriverName)
+		}
+
 		var err error
 
 		c.secondaryDB, err = c.NewEntDB(c.config.SecondaryDBSource)
