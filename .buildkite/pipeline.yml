@@ -25,49 +25,49 @@ steps:
             command: ["go", "test", "-coverprofile=coverage.out","./..."]
       artifact_paths: ["coverage.out"]
 
-- group: ":closed_lock_with_key: Security Checks"
-  depends_on: "tests"
-  key: "security"
-  steps:
-  - label: ":closed_lock_with_key: gosec"
-    key: "gosec"
-    plugins:
-      - docker#v5.10.0:
-          image: "registry.hub.docker.com/securego/gosec:2.18.2"
-          command: ["-no-fail", "-exclude-generated", "-fmt sonarqube", "-out", "results.txt", "./..."]
-          environment:
-            - "GOTOOLCHAIN=auto"
-    artifact_paths: ["results.txt"]
-
-  - label: ":github: upload PR reports"
-    key: "scan-upload-pr"
-    if: build.pull_request.id != null
-    depends_on: ["gosec", "go_test_sqlite"]
-    plugins:
-      - artifacts#v1.9.3:
-          download: "results.txt"
-      - artifacts#v1.9.3:
-          download: "coverage.out"
-          step: "go_test_sqlite"    
-      - docker#v5.10.0:
-            image: "sonarsource/sonar-scanner-cli:5"
+  - group: ":closed_lock_with_key: Security Checks"
+    depends_on: "tests"
+    key: "security"
+    steps:
+    - label: ":closed_lock_with_key: gosec"
+      key: "gosec"
+      plugins:
+        - docker#v5.10.0:
+            image: "registry.hub.docker.com/securego/gosec:2.18.2"
+            command: ["-no-fail", "-exclude-generated", "-fmt sonarqube", "-out", "results.txt", "./..."]
             environment:
-              - "SONAR_TOKEN"
-              - "SONAR_HOST_URL=$SONAR_HOST"
-              - "SONAR_SCANNER_OPTS=-Dsonar.pullrequest.branch=$BUILDKITE_BRANCH -Dsonar.pullrequest.base=$BUILDKITE_PULL_REQUEST_BASE_BRANCH -Dsonar.pullrequest.key=$BUILDKITE_PULL_REQUEST"
+              - "GOTOOLCHAIN=auto"
+      artifact_paths: ["results.txt"]
 
-  - label: ":github: upload reports"
-    key: "scan-upload"
-    if: build.branch == "main"
-    depends_on: ["gosec", "go_test"]
-    plugins:
-      - artifacts#v1.9.3:
-          download: results.txt
-      - artifacts#v1.9.3:
-          download: coverage.out
-          step: "go_test"
-      - docker#v5.10.0:
-            image: "sonarsource/sonar-scanner-cli:5"
-            environment:
-              - "SONAR_TOKEN"
-              - "SONAR_HOST_URL=$SONAR_HOST"
+    - label: ":github: upload PR reports"
+      key: "scan-upload-pr"
+      if: build.pull_request.id != null
+      depends_on: ["gosec", "go_test_sqlite"]
+      plugins:
+        - artifacts#v1.9.3:
+            download: "results.txt"
+        - artifacts#v1.9.3:
+            download: "coverage.out"
+            step: "go_test_sqlite"    
+        - docker#v5.10.0:
+              image: "sonarsource/sonar-scanner-cli:5"
+              environment:
+                - "SONAR_TOKEN"
+                - "SONAR_HOST_URL=$SONAR_HOST"
+                - "SONAR_SCANNER_OPTS=-Dsonar.pullrequest.branch=$BUILDKITE_BRANCH -Dsonar.pullrequest.base=$BUILDKITE_PULL_REQUEST_BASE_BRANCH -Dsonar.pullrequest.key=$BUILDKITE_PULL_REQUEST"
+
+    - label: ":github: upload reports"
+      key: "scan-upload"
+      if: build.branch == "main"
+      depends_on: ["gosec", "go_test"]
+      plugins:
+        - artifacts#v1.9.3:
+            download: results.txt
+        - artifacts#v1.9.3:
+            download: coverage.out
+            step: "go_test"
+        - docker#v5.10.0:
+              image: "sonarsource/sonar-scanner-cli:5"
+              environment:
+                - "SONAR_TOKEN"
+                - "SONAR_HOST_URL=$SONAR_HOST"
