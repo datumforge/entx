@@ -17,12 +17,12 @@ func TestCheckDialect(t *testing.T) {
 	}{
 		{
 			name:     "sqlite",
-			dialect:  "sqlite",
+			dialect:  "sqlite3",
 			expected: "sqlite3",
 		},
 		{
 			name:     "libsql",
-			dialect:  "sqlite",
+			dialect:  "libsql",
 			expected: "sqlite3",
 		},
 		{
@@ -62,12 +62,12 @@ func TestMultiWriteSupport(t *testing.T) {
 	}{
 		{
 			name:     "sqlite",
-			dialect:  "sqlite",
+			dialect:  "sqlite3",
 			expected: true,
 		},
 		{
 			name:     "libsql",
-			dialect:  "sqlite",
+			dialect:  "libsql",
 			expected: true,
 		},
 		{
