@@ -122,14 +122,6 @@ func (c *EntClientConfig) NewEntDB(dataSource string) (*entsql.Driver, error) {
 		return nil, fmt.Errorf("failed connecting to database: %w", err)
 	}
 
-	if entDialect == dialect.SQLite {
-		// enable foreign keys in sqlite
-		if _, err := db.Exec("PRAGMA foreign_keys = on;", nil); err != nil {
-			db.Close()
-			return nil, fmt.Errorf("failed to enable enable foreign keys: %w", err)
-		}
-	}
-
 	// verify db connection using ping
 	if err := db.Ping(); err != nil {
 		return nil, fmt.Errorf("failed verifying database connection: %w", err)
@@ -153,7 +145,7 @@ func Healthcheck(client *entsql.Driver) func(ctx context.Context) error {
 // corresponding to the given dialect
 func CheckEntDialect(d string) (string, error) {
 	switch d {
-	case "sqlite":
+	case "sqlite3":
 		return dialect.SQLite, nil
 	case "libsql":
 		return dialect.SQLite, nil
@@ -167,7 +159,7 @@ func CheckEntDialect(d string) (string, error) {
 // CheckMultiwriteSupport checks if the dialect supports multiwrite
 func CheckMultiwriteSupport(d string) bool {
 	switch d {
-	case "sqlite":
+	case "sqlite3":
 		return true
 	case "libsql":
 		return true
