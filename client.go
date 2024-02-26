@@ -122,6 +122,14 @@ func (c *EntClientConfig) NewEntDB(dataSource string) (*entsql.Driver, error) {
 		return nil, fmt.Errorf("failed connecting to database: %w", err)
 	}
 
+	// enable foreign keys for libsql
+	if c.config.DriverName == "libsql" {
+		if _, err := db.Exec("PRAGMA foreign_keys = on;", nil); err != nil {
+			db.Close()
+			return nil, fmt.Errorf("failed to enable enable foreign keys: %w", err)
+		}
+	}
+
 	// verify db connection using ping
 	if err := db.Ping(); err != nil {
 		return nil, fmt.Errorf("failed verifying database connection: %w", err)
