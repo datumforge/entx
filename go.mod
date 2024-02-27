@@ -4,7 +4,7 @@ go 1.22.0
 
 require (
 	entgo.io/contrib v0.4.5
-	entgo.io/ent v0.13.0
+	entgo.io/ent v0.13.1
 	github.com/99designs/gqlgen v0.17.44
 	github.com/brianvoe/gofakeit/v7 v7.0.1
 	github.com/stretchr/testify v1.8.4
