@@ -7,8 +7,9 @@ import (
 
 	"entgo.io/ent/dialect"
 	entsql "entgo.io/ent/dialect/sql"
+	"github.com/XSAM/otelsql"
 	_ "github.com/tursodatabase/libsql-client-go/libsql"
-	"github.com/uptrace/opentelemetry-go-extra/otelsql"
+
 	"go.opentelemetry.io/otel/attribute"
 
 	"go.uber.org/zap"
@@ -34,6 +35,8 @@ type Config struct {
 	SecondaryDBSource string `json:"secondary_db_source" koanf:"secondary_db_source" jsonschema:"description=dsn of the secondary database if multi-write is enabled" default:"file:backup.db"`
 	// CacheTTL to have results cached for subsequent requests
 	CacheTTL time.Duration `json:"catch_ttl" koanf:"cache_ttl" jsonschema:"description=cache results for subsequent requests, defaults to 1s" default:"1s"`
+	// RunMigrations to run migrations on startup
+	RunMigrations bool `json:"run_migrations" koanf:"run_migrations" jsonschema:"description=run migrations on startup" default:"true"`
 }
 
 // EntClientConfig configures the entsql drivers
@@ -61,14 +64,14 @@ func NewDBConfig(c Config, opts ...DBOption) *EntClientConfig {
 	// setup primary db connection
 	var err error
 
-	ec.primaryDB, err = ec.NewEntDB(c.PrimaryDBSource)
-	if err != nil {
-		ec.logger.Fatalw("failed to create primary db connection", "error", err)
-	}
-
 	// apply options
 	for _, opt := range opts {
 		opt(ec)
+	}
+
+	ec.primaryDB, err = ec.NewEntDB(c.PrimaryDBSource)
+	if err != nil {
+		ec.logger.Fatalw("failed to create primary db connection", "error", err)
 	}
 
 	return ec
@@ -116,10 +119,15 @@ func (c *EntClientConfig) NewEntDB(dataSource string) (*entsql.Driver, error) {
 
 	// setup db connection
 	db, err := otelsql.Open(c.config.DriverName, dataSource,
-		otelsql.WithAttributes(attribute.String("db.system", c.config.DriverName)),
-		otelsql.WithDBName(c.config.DatabaseName))
+		otelsql.WithAttributes(attribute.String("db.system", c.config.DriverName)))
 	if err != nil {
 		return nil, fmt.Errorf("failed connecting to database: %w", err)
+	}
+
+	if err = otelsql.RegisterDBStatsMetrics(db,
+		otelsql.WithAttributes(attribute.String("db.system", c.config.DriverName)),
+	); err != nil {
+		return nil, fmt.Errorf("failed registering database metrics for otelsql: %w", err)
 	}
 
 	// enable foreign keys for libsql
