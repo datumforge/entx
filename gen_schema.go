@@ -5,6 +5,7 @@ import (
 	"html/template"
 	"log"
 	"os"
+	"path/filepath"
 	"strings"
 
 	"entgo.io/ent/entc/gen"
@@ -39,12 +40,14 @@ func GenSchema(graphSchemaDir string) gen.Hook {
 					}
 				}
 
+				filePath := filepath.Clean(graphSchemaDir + strings.ToLower(node.Name) + ".graphql")
+
 				// check if schema already exists, skip generation so we don't overwrite manual changes
-				if _, err := os.Stat(graphSchemaDir + strings.ToLower(node.Name) + ".graphql"); err == nil {
+				if _, err := os.Stat(filePath); err == nil {
 					continue
 				}
 
-				file, err := os.Create(graphSchemaDir + strings.ToLower(node.Name) + ".graphql")
+				file, err := os.Create(filePath)
 				if err != nil {
 					log.Fatalf("Unable to create file: %v", err)
 				}
