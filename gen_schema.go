@@ -33,7 +33,7 @@ func GenSchema(graphSchemaDir string) gen.Hook {
 			for _, node := range g.Nodes {
 				// check skip annotation
 				if sg, ok := node.Annotations[SchemaGenAnnotationName]; ok {
-					val, _ := sg.(map[string]interface{})["Skip"]
+					val := sg.(map[string]interface{})["Skip"]
 
 					if val.(bool) {
 						continue
