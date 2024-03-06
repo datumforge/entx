@@ -24,19 +24,19 @@ type Config struct {
 	// Debug to print debug database logs
 	Debug bool `json:"debug" koanf:"debug" jsonschema:"description=debug enables printing the debug database logs" default:"false"`
 	// DatabaseName is the name of the database to use with otel tracing
-	DatabaseName string `json:"database_name" koanf:"database_name" jsonschema:"description=the name of the database to use with otel tracing" default:"datum"`
+	DatabaseName string `json:"databaseName" koanf:"databaseName" jsonschema:"description=the name of the database to use with otel tracing" default:"datum"`
 	// DriverName name from dialect.Driver
-	DriverName string `json:"driver_name" koanf:"driver_name" jsonschema:"description=sql driver name, supported drivers include sqlite, libsql, and psql" default:"libsql"`
+	DriverName string `json:"driverName" koanf:"driverName" jsonschema:"description=sql driver name, supported drivers include sqlite, libsql, and psql" default:"libsql"`
 	// MultiWrite enabled writing to two databases simultaneously
-	MultiWrite bool `json:"multi_write" koanf:"multi_write" jsonschema:"description=enables writing to two databases simultaneously" default:"false"`
+	MultiWrite bool `json:"multiWrite" koanf:"multiWrite" jsonschema:"description=enables writing to two databases simultaneously" default:"false"`
 	// PrimaryDBSource is the primary database source for all read and write operations
-	PrimaryDBSource string `json:"primary_db_source" koanf:"primary_db_source" jsonschema:"description=dsn of the primary database,required" default:"file:datum.db"`
+	PrimaryDBSource string `json:"primaryDbSource" koanf:"primaryDbSource" jsonschema:"description=dsn of the primary database,required" default:"file:datum.db"`
 	// SecondaryDBSource for when multi write is enabled
-	SecondaryDBSource string `json:"secondary_db_source" koanf:"secondary_db_source" jsonschema:"description=dsn of the secondary database if multi-write is enabled" default:"file:backup.db"`
+	SecondaryDBSource string `json:"secondaryDbSource" koanf:"secondaryDbSource" jsonschema:"description=dsn of the secondary database if multi-write is enabled" default:"file:backup.db"`
 	// CacheTTL to have results cached for subsequent requests
-	CacheTTL time.Duration `json:"catch_ttl" koanf:"cache_ttl" jsonschema:"description=cache results for subsequent requests, defaults to 1s" default:"1s"`
+	CacheTTL time.Duration `json:"catchTTL" koanf:"cacheTTL" jsonschema:"description=cache results for subsequent requests, defaults to 1s" default:"1s"`
 	// RunMigrations to run migrations on startup
-	RunMigrations bool `json:"run_migrations" koanf:"run_migrations" jsonschema:"description=run migrations on startup" default:"true"`
+	RunMigrations bool `json:"runMigrations" koanf:"runMigrations" jsonschema:"description=run migrations on startup" default:"true"`
 }
 
 // EntClientConfig configures the entsql drivers
