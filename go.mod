@@ -5,7 +5,7 @@ go 1.22.0
 require (
 	entgo.io/contrib v0.4.5
 	entgo.io/ent v0.13.1
-	github.com/99designs/gqlgen v0.17.44
+	github.com/99designs/gqlgen v0.17.45
 	github.com/XSAM/otelsql v0.29.0
 	github.com/brianvoe/gofakeit/v7 v7.0.2
 	github.com/datumforge/datum v0.3.5
@@ -82,7 +82,7 @@ require (
 	golang.org/x/sys v0.18.0 // indirect
 	golang.org/x/text v0.14.0 // indirect
 	golang.org/x/time v0.5.0 // indirect
-	golang.org/x/tools v0.18.0 // indirect
+	golang.org/x/tools v0.19.0 // indirect
 	google.golang.org/appengine v1.6.8 // indirect
 	google.golang.org/protobuf v1.33.0 // indirect
 	gopkg.in/yaml.v2 v2.4.0 // indirect
