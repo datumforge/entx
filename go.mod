@@ -1,6 +1,6 @@
 module github.com/datumforge/entx
 
-go 1.22.0
+go 1.22.1
 
 require (
 	entgo.io/contrib v0.4.5
