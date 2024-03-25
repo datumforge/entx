@@ -11,7 +11,7 @@ require (
 	github.com/datumforge/datum v0.3.6
 	github.com/stoewer/go-strcase v1.3.0
 	github.com/stretchr/testify v1.9.0
-	github.com/tursodatabase/libsql-client-go v0.0.0-20240319161759-27d97b27f9e1
+	github.com/tursodatabase/libsql-client-go v0.0.0-20240324203521-43ee80731cd2
 	github.com/vektah/gqlparser/v2 v2.5.11
 	go.opentelemetry.io/otel v1.24.0
 	go.uber.org/zap v1.27.0
