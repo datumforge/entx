@@ -8,7 +8,7 @@ import (
 
 	"github.com/vektah/gqlparser/v2/formatter"
 
-	"github.com/datumforge/phronesis/ent/_example/ent/graphapi"
+	"github.com/datumforge/entx/vanilla/_example/ent/graphapi"
 )
 
 // read in schema from internal package and save it to the schema file
