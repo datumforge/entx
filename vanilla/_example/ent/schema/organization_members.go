@@ -8,7 +8,7 @@ import (
 	"entgo.io/ent/schema/field"
 	"entgo.io/ent/schema/index"
 
-	"github.com/datumforge/phronesis/ent/_example/ent/enums"
+	"github.com/datumforge/entx/vanilla/_example/ent/enums"
 )
 
 // OrgMembership holds the schema definition for the OrgMembership entity
