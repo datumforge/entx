@@ -46,6 +46,8 @@ github.com/datumforge/datum v0.3.5 h1:MlUjaCDAhNAReG2/ZbO5ig4DTwJgAvZaA0LUiJM9pW
 github.com/datumforge/datum v0.3.5/go.mod h1:645mi6h8YjwmEPqFLh26lDV+gYtzXNSnLtlzgWaCa3g=
 github.com/datumforge/datum v0.3.6 h1:w3f+eoHUScuyOK5aoUcW+tA8NZ8VJLpAn2b16KlV4hg=
 github.com/datumforge/datum v0.3.6/go.mod h1:WrXJbGb4FtOpfNX0X8qqo3lr86zh4ZoO5J6hMDF5tHQ=
+github.com/datumforge/datum v0.4.7 h1:D/vcl9yvnJWmZb4rqFtVZZt6kVtKNlrZ07v0uAscADA=
+github.com/datumforge/datum v0.4.7/go.mod h1:M6PiiPWYjUS6BPKp25yMJ8IbjcnCI3YTySn0a8+3fx4=
 github.com/datumforge/echox v0.0.0-20240204015542-90bd5e1f295d h1:vDsUY1d5fRqK3hjpLZ1H7VSIoDNo9uP6BQSmI4MXc1w=
 github.com/datumforge/echox v0.0.0-20240204015542-90bd5e1f295d/go.mod h1:PIZalzJ+wD5P0bUHkn8wk0H+TsT94MoZUf0y1lTAwa4=
 github.com/datumforge/echox v0.0.0-20240312185605-fdb5a150410e h1:anHN8Bsa8x80oCYCuC3EC5kY+GO8ymIQOWvgAKZujlo=
@@ -292,6 +294,8 @@ golang.org/x/exp v0.0.0-20240222234643-814bf88cf225 h1:LfspQV/FYTatPTr/3HzIcmiUF
 golang.org/x/exp v0.0.0-20240222234643-814bf88cf225/go.mod h1:CxmFvTBINI24O/j8iY7H1xHzx2i4OsyguNBmN/uPtqc=
 golang.org/x/exp v0.0.0-20240314144324-c7f7c6466f7f h1:3CW0unweImhOzd5FmYuRsD4Y4oQFKZIjAnKbjV4WIrw=
 golang.org/x/exp v0.0.0-20240314144324-c7f7c6466f7f/go.mod h1:CxmFvTBINI24O/j8iY7H1xHzx2i4OsyguNBmN/uPtqc=
+golang.org/x/exp v0.0.0-20240325151524-a685a6edb6d8 h1:aAcj0Da7eBAtrTp03QXWvm88pSyOt+UgdZw2BFZ+lEw=
+golang.org/x/exp v0.0.0-20240325151524-a685a6edb6d8/go.mod h1:CQ1k9gNrJ50XIzaKCRR2hssIjF07kZFEiieALBM/ARQ=
 golang.org/x/mod v0.6.0-dev.0.20220419223038-86c51ed26bb4/go.mod h1:jJ57K6gSWd91VN4djpZkiMVwK6gcyfeH4XE8wZrZaV4=
 golang.org/x/mod v0.15.0 h1:SernR4v+D55NyBH2QiEQrlBAnj1ECL6AGrA5+dPaMY8=
 golang.org/x/mod v0.15.0/go.mod h1:hTbmBsO62+eylJbnUtE2MGJUyE7QWk4xUqPFrRgJ+7c=
