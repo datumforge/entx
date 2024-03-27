@@ -42,6 +42,8 @@ github.com/chenzhuoyu/base64x v0.0.0-20221115062448-fe3a3abad311 h1:qSGYFH7+jGhD
 github.com/chenzhuoyu/base64x v0.0.0-20221115062448-fe3a3abad311/go.mod h1:b583jCggY9gE99b6G5LEC39OIiVsWj+R97kbl5odCEk=
 github.com/datumforge/datum v0.4.0 h1:iEwWXesGYdC8LwXc74bDdtLBrDtc9+F70g7iIllx+y4=
 github.com/datumforge/datum v0.4.0/go.mod h1:RcwPkG0RhIoP8R8/Z8u5i2w6aC/2tVJXF5POluea4uY=
+github.com/datumforge/datum v0.4.1 h1:HhVZUhnvskksjPcN9HX7n9jilNz+TSsSVLTmk1IYMx4=
+github.com/datumforge/datum v0.4.1/go.mod h1:ULEyi3LavsPv1wuYo6mDOtpbme3wf2WsWU8YmYLvDSg=
 github.com/datumforge/echox v0.0.0-20240312185605-fdb5a150410e h1:anHN8Bsa8x80oCYCuC3EC5kY+GO8ymIQOWvgAKZujlo=
 github.com/datumforge/echox v0.0.0-20240312185605-fdb5a150410e/go.mod h1:ZCbNvIShUhAHKlURvgedaGUAghCNZli2I87uLJSPiZ0=
 github.com/davecgh/go-spew v1.1.0/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
