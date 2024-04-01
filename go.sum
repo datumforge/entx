@@ -228,6 +228,8 @@ github.com/tursodatabase/libsql-client-go v0.0.0-20240325124956-38d3fa8b48a2 h1:
 github.com/tursodatabase/libsql-client-go v0.0.0-20240325124956-38d3fa8b48a2/go.mod h1:9bKuHS7eZh/0mJndbUOrCx8Ej3PlsRDszj4L7oVYMPQ=
 github.com/tursodatabase/libsql-client-go v0.0.0-20240327144008-dd14b387afb3 h1:L2TGdqNA/1NwZxK98jUZk+lZP0fX8ydAcBpVRNufahg=
 github.com/tursodatabase/libsql-client-go v0.0.0-20240327144008-dd14b387afb3/go.mod h1:2Fu26tjM011BLeR5+jwTfs6DX/fNMEWV/3CBZvggrA4=
+github.com/tursodatabase/libsql-client-go v0.0.0-20240401075953-8e79a99d828a h1:LMz5RmEKz1epPZgUO3MtA5/X9Peudqm4rUoteSjLkho=
+github.com/tursodatabase/libsql-client-go v0.0.0-20240401075953-8e79a99d828a/go.mod h1:2Fu26tjM011BLeR5+jwTfs6DX/fNMEWV/3CBZvggrA4=
 github.com/twitchyliquid64/golang-asm v0.15.1 h1:SU5vSMR7hnwNxj24w34ZyCi/FmDZTkS4MhqMhdFk5YI=
 github.com/twitchyliquid64/golang-asm v0.15.1/go.mod h1:a1lVb/DtPvCB8fslRZhAngC2+aY1QWCk3Cedj/Gdt08=
 github.com/ugorji/go v1.1.7 h1:/68gy2h+1mWMrwZFeD1kQialdSzAb432dtpeJ42ovdo=
