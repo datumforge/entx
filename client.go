@@ -37,6 +37,8 @@ type Config struct {
 	CacheTTL time.Duration `json:"catchTTL" koanf:"cacheTTL" jsonschema:"description=cache results for subsequent requests, defaults to 1s" default:"1s"`
 	// RunMigrations to run migrations on startup
 	RunMigrations bool `json:"runMigrations" koanf:"runMigrations" jsonschema:"description=run migrations on startup" default:"true"`
+	// MigrationProvider to use for running migrations
+	MigrationProvider string `json:"migrationProvider" koanf:"migrationProvider" jsonschema:"description=migration provider to use for running migrations" default:"atlas"`
 }
 
 // EntClientConfig configures the entsql drivers

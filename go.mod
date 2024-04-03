@@ -22,7 +22,6 @@ require (
 	ariga.io/atlas v0.19.1-0.20240203083654-5948b60a8e43 // indirect
 	github.com/agext/levenshtein v1.2.3 // indirect
 	github.com/agnivade/levenshtein v1.1.1 // indirect
-	github.com/antlr/antlr4/runtime/Go/antlr/v4 v4.0.0-20230512164433-5d1fd1a340c9 // indirect
 	github.com/antlr4-go/antlr/v4 v4.13.0 // indirect
 	github.com/apparentlymart/go-textseg/v15 v15.0.0 // indirect
 	github.com/cespare/xxhash/v2 v2.2.0 // indirect
@@ -48,7 +47,6 @@ require (
 	github.com/gorilla/securecookie v1.1.2 // indirect
 	github.com/hashicorp/golang-lru/v2 v2.0.7 // indirect
 	github.com/hashicorp/hcl/v2 v2.19.1 // indirect
-	github.com/klauspost/compress v1.17.6 // indirect
 	github.com/lestrrat-go/blackmagic v1.0.2 // indirect
 	github.com/lestrrat-go/httpcc v1.0.1 // indirect
 	github.com/lestrrat-go/httprc v1.0.5 // indirect
