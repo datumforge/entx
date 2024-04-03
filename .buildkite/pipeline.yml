@@ -21,7 +21,7 @@ steps:
       key: "go_test"
       plugins:
         - docker#v5.10.0:
-            image: golang:1.22.1
+            image: golang:1.22.2
             command: ["go", "test", "-coverprofile=coverage.out","./..."]
       artifact_paths: ["coverage.out"]
 
