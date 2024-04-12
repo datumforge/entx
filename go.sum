@@ -40,6 +40,8 @@ github.com/datumforge/datum v0.4.2 h1:1lwzp92AOMmRrDrweu79AL4KFZLjlOkjarCkhWyRFW
 github.com/datumforge/datum v0.4.2/go.mod h1:FujNoEViFcBDRqSN1nc2/KTYZXmI4R/i0Qu+auKAeTA=
 github.com/datumforge/datum v0.4.3 h1:NkUw7PHotO/c9CErRCITVHxTTzePlUZJvptZAHnJs/o=
 github.com/datumforge/datum v0.4.3/go.mod h1:+x4bgbBIv0r1Jgiz17OFZYvE017zETQnUO77owZiWTA=
+github.com/datumforge/datum v0.4.4 h1:OeD5AK4LdJcyZiCiEdP/PW1o5Lik3zqb4VFv7yI9Qpw=
+github.com/datumforge/datum v0.4.4/go.mod h1:sfiOVg+EBC9yUX16xXjtsmO31f+JmlvX9LGqdxTa5m8=
 github.com/datumforge/echox v0.0.0-20240312185605-fdb5a150410e h1:anHN8Bsa8x80oCYCuC3EC5kY+GO8ymIQOWvgAKZujlo=
 github.com/datumforge/echox v0.0.0-20240312185605-fdb5a150410e/go.mod h1:ZCbNvIShUhAHKlURvgedaGUAghCNZli2I87uLJSPiZ0=
 github.com/davecgh/go-spew v1.1.0/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
