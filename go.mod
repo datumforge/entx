@@ -8,7 +8,7 @@ require (
 	github.com/99designs/gqlgen v0.17.45
 	github.com/XSAM/otelsql v0.29.0
 	github.com/brianvoe/gofakeit/v7 v7.0.2
-	github.com/datumforge/datum v0.4.3
+	github.com/datumforge/datum v0.4.4
 	github.com/stoewer/go-strcase v1.3.0
 	github.com/stretchr/testify v1.9.0
 	github.com/tursodatabase/libsql-client-go v0.0.0-20240411070317-a1138d155304
