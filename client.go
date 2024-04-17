@@ -39,6 +39,8 @@ type Config struct {
 	RunMigrations bool `json:"runMigrations" koanf:"runMigrations" jsonschema:"description=run migrations on startup" default:"true"`
 	// MigrationProvider to use for running migrations
 	MigrationProvider string `json:"migrationProvider" koanf:"migrationProvider" jsonschema:"description=migration provider to use for running migrations" default:"atlas"`
+	// EnableHistory to enable history data to be logged to the database
+	EnableHistory bool `json:"enableHistory" koanf:"enableHistory" jsonschema:"description=enable history data to be logged to the database" default:"false"`
 }
 
 // EntClientConfig configures the entsql drivers
