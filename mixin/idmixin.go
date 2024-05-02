@@ -35,6 +35,7 @@ func (i IDMixin) Fields() []ent.Field {
 					entoas.Skip(true),
 					entgql.Skip(),
 				).
+				Unique().
 				DefaultFunc(func() string { return ulids.New().String() }),
 		)
 	}
