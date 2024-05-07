@@ -7,7 +7,7 @@ require (
 	entgo.io/ent v0.13.1
 	github.com/99designs/gqlgen v0.17.45
 	github.com/XSAM/otelsql v0.31.0
-	github.com/brianvoe/gofakeit/v7 v7.0.2
+	github.com/brianvoe/gofakeit/v7 v7.0.3
 	github.com/datumforge/datum v0.4.6
 	github.com/stoewer/go-strcase v1.3.0
 	github.com/stretchr/testify v1.9.0
