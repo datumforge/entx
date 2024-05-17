@@ -2,7 +2,6 @@ package mixin
 
 import (
 	"entgo.io/contrib/entgql"
-	"entgo.io/contrib/entoas"
 	"entgo.io/ent"
 	"entgo.io/ent/schema/field"
 	"entgo.io/ent/schema/mixin"
@@ -23,7 +22,6 @@ func (i IDMixin) Fields() []ent.Field {
 	fields := []ent.Field{
 		field.String("id").
 			Immutable().
-			Annotations(entoas.Annotation{ReadOnly: true}).
 			DefaultFunc(func() string { return ulids.New().String() }),
 	}
 
@@ -32,7 +30,6 @@ func (i IDMixin) Fields() []ent.Field {
 			field.String("mapping_id").
 				Immutable().
 				Annotations(
-					entoas.Skip(true),
 					entgql.Skip(),
 				).
 				Unique().
