@@ -15,7 +15,7 @@ require (
 	github.com/vektah/gqlparser/v2 v2.5.12
 	go.opentelemetry.io/otel v1.26.0
 	go.uber.org/zap v1.27.0
-	modernc.org/sqlite v1.29.9
+	modernc.org/sqlite v1.29.10
 )
 
 require (
