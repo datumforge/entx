@@ -59,7 +59,7 @@ type EntClientConfig struct {
 type DBOption func(opts *EntClientConfig)
 
 // NewDBConfig returns a new ent database configuration
-func NewDBConfig(c Config, opts ...DBOption) *EntClientConfig {
+func NewDBConfig(c Config, opts ...DBOption) (*EntClientConfig, error) {
 	ec := &EntClientConfig{
 		config: c,
 		logger: zap.NewNop().Sugar(), // set a no-op logger by default
@@ -75,10 +75,12 @@ func NewDBConfig(c Config, opts ...DBOption) *EntClientConfig {
 
 	ec.primaryDB, err = ec.NewEntDB(c.PrimaryDBSource)
 	if err != nil {
-		ec.logger.Fatalw("failed to create primary db connection", "error", err)
+		ec.logger.Errorw("failed to create primary db connection", "error", err)
+
+		return nil, err
 	}
 
-	return ec
+	return ec, nil
 }
 
 // GetPrimaryDB returns the primary database configuration
