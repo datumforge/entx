@@ -37,8 +37,12 @@ github.com/cespare/xxhash/v2 v2.3.0/go.mod h1:VGX0DQ3Q6kWi7AoAeZDth3/j3BFtOZR5XL
 github.com/creack/pty v1.1.9/go.mod h1:oKZEueFk5CKHvIhNR5MUki03XCEU+Q6VDXinZuGJ33E=
 github.com/datumforge/datum v0.5.2 h1:mv0zgk8QM8lsgFhn3qzAWU6+YHCKpHuYwlraIgxo65U=
 github.com/datumforge/datum v0.5.2/go.mod h1:5ZEAwm1SMzOLuszBc99fqVts+58E/We0O0dRKpP9yMY=
+github.com/datumforge/datum v0.5.3 h1:EICBe+BYiqzmvm0/sPIRd2xxcnG1GLvdazQz/6849T8=
+github.com/datumforge/datum v0.5.3/go.mod h1:nAYNkFFYYizCkgIuAuooPkNZ+uP593LCDZHrCKTK4CY=
 github.com/datumforge/echox v0.0.0-20240312185605-fdb5a150410e h1:anHN8Bsa8x80oCYCuC3EC5kY+GO8ymIQOWvgAKZujlo=
 github.com/datumforge/echox v0.0.0-20240312185605-fdb5a150410e/go.mod h1:ZCbNvIShUhAHKlURvgedaGUAghCNZli2I87uLJSPiZ0=
+github.com/datumforge/echox v0.1.1 h1:0R+XIF/eRoDFaXIc9SePdRvda/UPWhkn/RQUuwBCCFM=
+github.com/datumforge/echox v0.1.1/go.mod h1:hRNX2nV40eVFbV9GY/Gq4EaCjZypHScOzd2Ro3OYAiw=
 github.com/davecgh/go-spew v1.1.0/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
 github.com/davecgh/go-spew v1.1.1/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
 github.com/davecgh/go-spew v1.1.2-0.20180830191138-d8f796af33cc h1:U9qPSI2PIWSS1VwoXQT9A3Wy9MM3WgvqSxFWenqJduM=
