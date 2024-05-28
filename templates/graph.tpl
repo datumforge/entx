@@ -30,6 +30,15 @@ extend type Mutation{
         input: [Create{{ .Name }}Input!]
     ): {{ .Name }}BulkCreatePayload!
     """
+    Create multiple new {{ .Name | ToLowerCamel }}s via file upload
+    """
+    createBulkCSV{{ .Name }}(
+        """
+        csv file containing values of the {{ .Name | ToLowerCamel}}
+        """
+        input: Upload!
+    ): {{ .Name }}BulkCreatePayload!
+    """
     Update an existing {{ .Name | ToLowerCamel }}
     """
     update{{ .Name }}(
