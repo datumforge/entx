@@ -9,6 +9,7 @@ import (
 	"strings"
 
 	"entgo.io/ent/entc/gen"
+	"github.com/gertd/go-pluralize"
 	"github.com/stoewer/go-strcase"
 )
 
@@ -72,6 +73,7 @@ func createTemplate() *template.Template {
 	// function map for template
 	fm := template.FuncMap{
 		"ToLowerCamel": strcase.LowerCamelCase,
+		"ToPlural":     pluralize.NewClient().Plural,
 	}
 
 	// create schema template

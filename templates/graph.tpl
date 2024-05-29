@@ -21,6 +21,24 @@ extend type Mutation{
         input: Create{{ .Name }}Input!
     ): {{ .Name }}CreatePayload!
     """
+    Create multiple new {{ .Name | ToLowerCamel }}s
+    """
+    createBulk{{ .Name }}(
+        """
+        values of the {{ .Name | ToLowerCamel}}
+        """
+        input: [Create{{ .Name }}Input!]
+    ): {{ .Name }}BulkCreatePayload!
+    """
+    Create multiple new {{ .Name | ToLowerCamel }}s via file upload
+    """
+    createBulkCSV{{ .Name }}(
+        """
+        csv file containing values of the {{ .Name | ToLowerCamel}}
+        """
+        input: Upload!
+    ): {{ .Name }}BulkCreatePayload!
+    """
     Update an existing {{ .Name | ToLowerCamel }}
     """
     update{{ .Name }}(
@@ -72,4 +90,14 @@ type {{ .Name }}DeletePayload {
     Deleted {{ .Name | ToLowerCamel }} ID
     """
     deletedID: ID!
+}
+
+"""
+Return response for createBulk{{ .Name }} mutation
+"""
+type {{ .Name }}BulkCreatePayload {
+    """
+    Created {{ .Name | ToLowerCamel }}s
+    """
+    {{ .Name | ToLowerCamel | ToPlural }}: [{{ .Name }}!]
 }

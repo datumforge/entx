@@ -10,3 +10,11 @@ A helper package for working with ent(https://entgo.io/). Today this package inc
 - Softdelete extension with cascade delete functionality added in
 - Multi-driver support
 - SQLite connection interface management
+
+## Usage
+
+When using the generated `graphql` schemas, you must have the `Upload` scaler defined, which are used for the file upload resolvers:
+
+```graphql
+scalar Upload
+```
