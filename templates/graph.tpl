@@ -99,5 +99,5 @@ type {{ .Name }}BulkCreatePayload {
     """
     Created {{ .Name | ToLowerCamel }}s
     """
-    {{ .Name | ToLowerCamel }}s: [{{ .Name }}!]
+    {{ .Name | ToLowerCamel | ToPlural }}: [{{ .Name }}!]
 }
