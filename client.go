@@ -34,7 +34,7 @@ type Config struct {
 	// SecondaryDBSource for when multi write is enabled
 	SecondaryDBSource string `json:"secondaryDbSource" koanf:"secondaryDbSource" jsonschema:"description=dsn of the secondary database if multi-write is enabled" default:"file:backup.db"`
 	// CacheTTL to have results cached for subsequent requests
-	CacheTTL time.Duration `json:"catchTTL" koanf:"cacheTTL" jsonschema:"description=cache results for subsequent requests, defaults to 1s" default:"1s"`
+	CacheTTL time.Duration `json:"cacheTTL" koanf:"cacheTTL" jsonschema:"description=cache results for subsequent requests, defaults to 1s" default:"1s"`
 	// RunMigrations to run migrations on startup
 	RunMigrations bool `json:"runMigrations" koanf:"runMigrations" jsonschema:"description=run migrations on startup" default:"true"`
 	// MigrationProvider to use for running migrations
