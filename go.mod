@@ -8,7 +8,7 @@ require (
 	github.com/99designs/gqlgen v0.17.49
 	github.com/XSAM/otelsql v0.31.0
 	github.com/brianvoe/gofakeit/v7 v7.0.3
-	github.com/datumforge/datum v0.6.4
+	github.com/datumforge/datum v0.6.5
 	github.com/gertd/go-pluralize v0.2.1
 	github.com/stoewer/go-strcase v1.3.0
 	github.com/stretchr/testify v1.9.0
@@ -69,7 +69,7 @@ require (
 	go.opentelemetry.io/otel/trace v1.27.0 // indirect
 	go.uber.org/multierr v1.11.0 // indirect
 	golang.org/x/crypto v0.24.0 // indirect
-	golang.org/x/exp v0.0.0-20240604190554-fc45aab8b7f8 // indirect
+	golang.org/x/exp v0.0.0-20240613232115-7f521ea00fb8 // indirect
 	golang.org/x/mod v0.18.0 // indirect
 	golang.org/x/oauth2 v0.21.0 // indirect
 	golang.org/x/sync v0.7.0 // indirect
