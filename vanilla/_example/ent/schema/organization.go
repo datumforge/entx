@@ -6,6 +6,7 @@ import (
 	"entgo.io/ent/schema"
 	"entgo.io/ent/schema/field"
 	"entgo.io/ent/schema/index"
+	"github.com/datumforge/entx/mixin"
 )
 
 // Organization holds the schema definition for the Organization entity
@@ -38,5 +39,11 @@ func (Organization) Indexes() []ent.Index {
 func (Organization) Annotations() []schema.Annotation {
 	return []schema.Annotation{
 		entgql.Mutations(entgql.MutationCreate(), entgql.MutationUpdate()),
+	}
+}
+
+func (Organization) Mixin() []ent.Mixin {
+	return []ent.Mixin{
+		mixin.AuditMixin{},
 	}
 }
