@@ -1,21 +1,15 @@
-package entx
+package genhooks
 
 import (
-	"embed"
 	"html/template"
 	"log"
 	"os"
-	"path/filepath"
-	"strings"
 
 	"entgo.io/ent/entc/gen"
 	"github.com/gertd/go-pluralize"
 	"github.com/stoewer/go-strcase"
-)
 
-var (
-	//go:embed templates/*
-	_templates embed.FS
+	"github.com/datumforge/entx"
 )
 
 // schema data for template
@@ -33,15 +27,11 @@ func GenSchema(graphSchemaDir string) gen.Hook {
 			// loop through all nodes and generate schema if not specified to be skipped
 			for _, node := range g.Nodes {
 				// check skip annotation
-				if sg, ok := node.Annotations[SchemaGenAnnotationName]; ok {
-					val := sg.(map[string]interface{})["Skip"]
-
-					if val.(bool) {
-						continue
-					}
+				if checkSchemaGenSkip(node) {
+					continue
 				}
 
-				filePath := filepath.Clean(graphSchemaDir + strings.ToLower(node.Name) + ".graphql")
+				filePath := getFileName(graphSchemaDir, node.Name)
 
 				// check if schema already exists, skip generation so we don't overwrite manual changes
 				if _, err := os.Stat(filePath); err == nil {
@@ -66,6 +56,21 @@ func GenSchema(graphSchemaDir string) gen.Hook {
 			return next.Generate(g)
 		})
 	}
+}
+
+// checkSchemaGenSkip checks if the type has the Schema Skip annotation
+func checkSchemaGenSkip(node *gen.Type) bool {
+	schemaGenAnt := &entx.SchemaGenAnnotation{}
+
+	if ant, ok := node.Annotations[schemaGenAnt.Name()]; ok {
+		if err := schemaGenAnt.Decode(ant); err != nil {
+			return false
+		}
+
+		return schemaGenAnt.Skip
+	}
+
+	return false
 }
 
 // createTemplate creates a new template for generating graphql schemas
