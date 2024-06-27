@@ -7,9 +7,15 @@ import (
 
 	"entgo.io/contrib/entgql"
 	"entgo.io/ent/entc/gen"
+	"github.com/datumforge/entx"
 	"go.uber.org/zap"
 
 	"entgo.io/ent/entc"
+)
+
+const (
+	graphSchemaDir = "./../schema/"
+	graphQueryDir  = "./../query/"
 )
 
 func main() {
@@ -28,6 +34,10 @@ func main() {
 	if err := entc.Generate("./schema",
 		&gen.Config{
 			Features: []gen.Feature{gen.FeaturePrivacy},
+			Hooks: []gen.Hook{
+				entx.GenSchema(graphSchemaDir),
+				entx.GenQuery(graphQueryDir),
+			},
 		},
 		entc.Dependency(
 			entc.DependencyName("Logger"),
