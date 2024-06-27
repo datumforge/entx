@@ -1,4 +1,4 @@
-package entx
+package genhooks
 
 import (
 	"html/template"
@@ -11,6 +11,8 @@ import (
 	"entgo.io/ent/entc/gen"
 	"github.com/gertd/go-pluralize"
 	"github.com/stoewer/go-strcase"
+
+	"github.com/datumforge/entx"
 )
 
 // query data for template
@@ -123,7 +125,7 @@ func checkEntqlMutation(node *gen.Type) bool {
 
 // checkQueryGenSkip checks if the type has the QueryGen Skip annotation
 func checkQueryGenSkip(node *gen.Type) bool {
-	queryGenAnt := &QueryGenAnnotation{}
+	queryGenAnt := &entx.QueryGenAnnotation{}
 
 	if ant, ok := node.Annotations[queryGenAnt.Name()]; ok {
 		if err := queryGenAnt.Decode(ant); err != nil {

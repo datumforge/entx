@@ -7,7 +7,7 @@ import (
 
 	"entgo.io/contrib/entgql"
 	"entgo.io/ent/entc/gen"
-	"github.com/datumforge/entx"
+	"github.com/datumforge/entx/genhooks"
 	"go.uber.org/zap"
 
 	"entgo.io/ent/entc"
@@ -35,8 +35,8 @@ func main() {
 		&gen.Config{
 			Features: []gen.Feature{gen.FeaturePrivacy},
 			Hooks: []gen.Hook{
-				entx.GenSchema(graphSchemaDir),
-				entx.GenQuery(graphQueryDir),
+				genhooks.GenSchema(graphSchemaDir),
+				genhooks.GenQuery(graphQueryDir),
 			},
 		},
 		entc.Dependency(

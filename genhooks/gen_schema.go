@@ -1,4 +1,4 @@
-package entx
+package genhooks
 
 import (
 	"html/template"
@@ -8,6 +8,8 @@ import (
 	"entgo.io/ent/entc/gen"
 	"github.com/gertd/go-pluralize"
 	"github.com/stoewer/go-strcase"
+
+	"github.com/datumforge/entx"
 )
 
 // schema data for template
@@ -58,7 +60,7 @@ func GenSchema(graphSchemaDir string) gen.Hook {
 
 // checkSchemaGenSkip checks if the type has the Schema Skip annotation
 func checkSchemaGenSkip(node *gen.Type) bool {
-	schemaGenAnt := &SchemaGenAnnotation{}
+	schemaGenAnt := &entx.SchemaGenAnnotation{}
 
 	if ant, ok := node.Annotations[schemaGenAnt.Name()]; ok {
 		if err := schemaGenAnt.Decode(ant); err != nil {
