@@ -41,6 +41,12 @@ mutation CreateOrganization($input: CreateOrganizationInput!) {
   }
 }
 
+mutation DeleteOrganization($deleteOrganizationId: ID!) {
+  deleteOrganization(id: $deleteOrganizationId) {
+    deletedID
+  }
+}
+
 query GetAllOrganizations {
   organizations {
     edges {

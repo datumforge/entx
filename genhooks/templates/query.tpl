@@ -28,6 +28,12 @@ mutation Create{{ .Name }}($input: Create{{ .Name }}Input!) {
     }
   }
 }
+
+mutation Delete{{ .Name }}($delete{{ .Name }}Id: ID!) {
+  delete{{ .Name }}(id: $delete{{ .Name }}Id) {
+    deletedID
+  }
+}
 {{- end}}
 
 query GetAll{{ .Name | ToPlural }} {
