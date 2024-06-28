@@ -45,7 +45,7 @@ query GetAllOrgMemberships {
   }
 }
 query GetOrgMembershipByID($orgMembershipId: ID!) {
-  orgMemberships(id: $orgMembershipId) {
+  orgMembership(id: $orgMembershipId) {
     id
     organizationID
     role

@@ -1,5 +1,10 @@
 version: '3'
 
+includes:
+  example:
+    taskfile: ./vanilla/_example/Taskfile.yml
+    dir: ./vanilla/_example
+
 tasks:
   go:lint:
     desc: runs golangci-lint, the most annoying opinionated linter ever

@@ -44,7 +44,7 @@ query GetAll{{ .Name | ToPlural }} {
 
 {{- if not .IsHistory }}
 query Get{{ .Name }}ByID(${{ .Name | ToLowerCamel }}Id: ID!) {
-  {{ .Name | ToLowerCamel | ToPlural }}(id: ${{ .Name | ToLowerCamel }}Id) {
+  {{ .Name | ToLowerCamel }}(id: ${{ .Name | ToLowerCamel }}Id) {
     {{- range .Fields }}
     {{.}}
     {{- end}}

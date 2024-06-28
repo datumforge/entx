@@ -57,7 +57,7 @@ query GetAllOrganizations {
   }
 }
 query GetOrganizationByID($organizationId: ID!) {
-  organizations(id: $organizationId) {
+  organization(id: $organizationId) {
     createdAt
     createdBy
     description
