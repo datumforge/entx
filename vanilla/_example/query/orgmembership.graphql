@@ -32,6 +32,12 @@ mutation CreateOrgMembership($input: CreateOrgMembershipInput!) {
   }
 }
 
+mutation DeleteOrgMembership($deleteOrgMembershipId: ID!) {
+  deleteOrgMembership(id: $deleteOrgMembershipId) {
+    deletedID
+  }
+}
+
 query GetAllOrgMemberships {
   orgMemberships {
     edges {
@@ -45,7 +51,7 @@ query GetAllOrgMemberships {
   }
 }
 query GetOrgMembershipByID($orgMembershipId: ID!) {
-  orgMemberships(id: $orgMembershipId) {
+  orgMembership(id: $orgMembershipId) {
     id
     organizationID
     role
