@@ -6,7 +6,7 @@ import (
 	"github.com/vektah/gqlparser/v2/ast"
 )
 
-//nolint:goerr113
+//nolint:err113
 var (
 	addJSONScalar = func(g *gen.Graph, s *ast.Schema) error {
 		s.Types["JSON"] = &ast.Definition{
