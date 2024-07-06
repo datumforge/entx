@@ -6,7 +6,7 @@ require (
 	entgo.io/contrib v0.5.0
 	entgo.io/ent v0.13.1
 	github.com/99designs/gqlgen v0.17.49
-	github.com/XSAM/otelsql v0.31.0
+	github.com/XSAM/otelsql v0.32.0
 	github.com/brianvoe/gofakeit/v7 v7.0.4
 	github.com/datumforge/datum v0.7.1
 	github.com/gertd/go-pluralize v0.2.1
