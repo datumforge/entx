@@ -12,7 +12,7 @@ require (
 	github.com/gertd/go-pluralize v0.2.1
 	github.com/stoewer/go-strcase v1.3.0
 	github.com/stretchr/testify v1.9.0
-	github.com/tursodatabase/libsql-client-go v0.0.0-20240718121810-4d9f581b1672
+	github.com/tursodatabase/libsql-client-go v0.0.0-20240718143357-9bc6b51d800d
 	github.com/vektah/gqlparser/v2 v2.5.16
 	go.opentelemetry.io/otel v1.28.0
 	go.uber.org/zap v1.27.0
