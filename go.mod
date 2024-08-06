@@ -8,7 +8,7 @@ require (
 	github.com/99designs/gqlgen v0.17.49
 	github.com/XSAM/otelsql v0.32.0
 	github.com/brianvoe/gofakeit/v7 v7.0.4
-	github.com/datumforge/datum v0.7.6
+	github.com/datumforge/datum v0.7.7
 	github.com/gertd/go-pluralize v0.2.1
 	github.com/stoewer/go-strcase v1.3.0
 	github.com/stretchr/testify v1.9.0
@@ -70,7 +70,7 @@ require (
 	golang.org/x/crypto v0.25.0 // indirect
 	golang.org/x/exp v0.0.0-20240719175910-8a7402abbf56 // indirect
 	golang.org/x/mod v0.19.0 // indirect
-	golang.org/x/oauth2 v0.21.0 // indirect
+	golang.org/x/oauth2 v0.22.0 // indirect
 	golang.org/x/sync v0.7.0 // indirect
 	golang.org/x/sys v0.22.0 // indirect
 	golang.org/x/text v0.16.0 // indirect
